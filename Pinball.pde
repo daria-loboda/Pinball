@@ -9,7 +9,10 @@ void setup()
   leftFlipper = new Flipper(width/2-150, height-50, width/2-25, height-10, width/2-145, height-55);
   rightFlipper = new Flipper((width/2)+150, height-50, width/2+25, height-10, width/2+145, height-55 );
   
-  
+  ball = new Ball(70, 70, 20);                                              
+  gravity = 2.4;
+  speedY = 9;
+  speedX = 2;
 }
 
 int num = 0;
@@ -20,6 +23,11 @@ Flipper leftFlipper;
 Flipper rightFlipper;
 boolean flipL = false;
 boolean flipR = false;
+
+Ball ball;
+float gravity;
+float speedY;
+float speedX;
 
 
 void menu()
@@ -80,6 +88,7 @@ void draw()
       }
     }
     rightFlipper.updateRight();                          //update right moves right flipper
+    ball.render();
   }
   
   
